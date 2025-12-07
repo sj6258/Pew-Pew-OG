@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfo3m0yyqjer1"]
+
+[ext_resource type="Script" uid="uid://c2ou4cvoupgsa" path="res://laser.gd" id="1_6vqwg"]
+[ext_resource type="Texture2D" uid="uid://d0ujgpyy2gh5d" path="res://assets/kenney_space-shooter-redux/PNG/Lasers/laserRed01.png" id="1_fn5yt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vqwg"]
+size = Vector2(10, 54)
+
+[node name="laser" type="Area2D"]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6vqwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fn5yt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6vqwg")
