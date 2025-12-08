@@ -12,7 +12,7 @@ func _process(_delta):
 	if Input.is_action_pressed("left") and position.x > 30:
 		position.x += -10
 		
-	if Input.is_action_pressed("right") and position.x < 300:
+	if Input.is_action_pressed("right") and position.x < 400:
 		position.x += 10
 	
 	if Input.is_action_just_pressed("shoot"):
