@@ -20,3 +20,4 @@ func _process(_delta):
 		var laser = laser_1.instantiate()
 		laser.position = position
 		get_parent().add_child(laser)
+		$AudioStreamPlayer2D.play()

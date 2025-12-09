@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj8gb5vuxdibh"]
+
+[ext_resource type="Script" uid="uid://dfhq4d2kg0sy7" path="res://rich_text_label.gd" id="1_2ild6"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+offset_right = 963.0
+offset_bottom = 544.0
+text = "IN A UNIVERSE FAR AWAY...."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_characters_behavior = 3
+visible_ratio = 0.0
+script = ExtResource("1_2ild6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

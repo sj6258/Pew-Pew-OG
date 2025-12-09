@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvyilrk17v34c"]
+
+[ext_resource type="Script" uid="uid://bmet7xk4ocxij" path="res://explosions.gd" id="1_0iu52"]
+[ext_resource type="Texture2D" uid="uid://ckyunyuai1lid" path="res://assets/kenney_space-shooter-redux/PNG/Effects/star1.png" id="1_vphx0"]
+[ext_resource type="AudioStream" uid="uid://cmbm2qij4bhg5" path="res://assets/kenney_space-shooter-redux/Bonus/sfx_twoTone.ogg" id="3_wgd01"]
+
+[sub_resource type="Gradient" id="Gradient_0iu52"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wgd01"]
+gradient = SubResource("Gradient_0iu52")
+
+[sub_resource type="Gradient" id="Gradient_vlq3s"]
+offsets = PackedFloat32Array(0.06603774, 0.38679245, 0.6603774, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.38679245, 0.38679245, 0.38679245, 1, 0.6603774, 0.6603774, 0.6603774, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3f27"]
+gradient = SubResource("Gradient_vlq3s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wgd01"]
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+color = Color(18.892153, 6.752612, 2.2795458, 1)
+color_ramp = SubResource("GradientTexture1D_t3f27")
+color_initial_ramp = SubResource("GradientTexture1D_wgd01")
+
+[node name="explosions" type="Node2D"]
+script = ExtResource("1_0iu52")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 40
+texture = ExtResource("1_vphx0")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wgd01")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wgd01")
+pitch_scale = 2.0
+autoplay = true
