@@ -36,6 +36,7 @@ script = ExtResource("1_0iu52")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5793905, 0.51663804)
 emitting = false
 amount = 40
 texture = ExtResource("1_vphx0")

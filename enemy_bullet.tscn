@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://lo23susti2e3"]
+
+[ext_resource type="Texture2D" uid="uid://ca1l6hu1w8tr4" path="res://assets/kenney_space-shooter-redux/PNG/Lasers/laserRed08.png" id="1_1xapl"]
+[ext_resource type="Script" uid="uid://cjt84y4eujxr3" path="res://enemy_bullet.gd" id="1_gl7bs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl7bs"]
+radius = 5.0990195
+
+[node name="enemy_bullet" type="Area2D"]
+script = ExtResource("1_gl7bs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_1xapl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gl7bs")

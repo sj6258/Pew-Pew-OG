@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://di77sjdewi01a" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b16xijtmfm438" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://dfo3m0yyqjer1" path="res://laser.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://dkudpldxb2tam" path="res://enemy.tscn" id="3_feb5d"]
+[ext_resource type="Theme" uid="uid://5hpgokulxby1" path="res://game.tres" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://lo23susti2e3" path="res://enemy_bullet.tscn" id="4_fc0e3"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_fc0e3")
@@ -11,13 +11,30 @@ script = ExtResource("1_fc0e3")
 [node name="player" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(61, 356)
 
-[node name="laser" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(100, 357)
-
 [node name="spawn_timer" type="Timer" parent="."]
 wait_time = 0.9
 autostart = true
 
-[node name="enemy" parent="." instance=ExtResource("3_feb5d")]
+[node name="game_ui" type="Control" parent="."]
+custom_minimum_size = Vector2(960, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_feb5d")
+
+[node name="score" type="Label" parent="game_ui"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "SCORE:0000"
+
+[node name="enemy_bullet" parent="." instance=ExtResource("4_fc0e3")]
+position = Vector2(621, 325)
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
