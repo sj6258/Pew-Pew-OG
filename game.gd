@@ -23,3 +23,11 @@ func _update_ui():
 func on_enemy_killed():
 	score += 10
 	_update_ui()
+
+
+func _on_player_player_killed():
+	$restart_timer.start()
+
+
+func _on_restart_timer_timeout():
+	get_tree().reload_current_scene()

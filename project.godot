@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pew pew"
-run/main_scene="uid://6p3ey7po5b14"
+run/main_scene="uid://bj8gb5vuxdibh"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

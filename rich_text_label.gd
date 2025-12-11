@@ -1,8 +1,6 @@
 extends RichTextLabel
 @onready var character_timer: Timer = $character_timer
 
-@onready var change_timer: Timer = $change_timer
-
 
 
 func _on_timer_timeout():

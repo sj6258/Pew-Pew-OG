@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfhq4d2kg0sy7" path="res://rich_text_label.gd" id="1_2ild6"]
 
-[node name="RichTextLabel" type="RichTextLabel"]
+[node name="Main" type="RichTextLabel"]
 offset_right = 963.0
 offset_bottom = 544.0
 text = "IN A UNIVERSE FAR AWAY...."
